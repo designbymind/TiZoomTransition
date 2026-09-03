@@ -1,7 +1,11 @@
 # TiZoomTransition
 
 <p align="center">
-  <img src="assets/ti-zoom-transition-hero-v2.png" alt="TiZoomTransition source view expanding into a full-screen view" width="640">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/ti-zoom-transition-hero-dark.png">
+    <source media="(prefers-color-scheme: light)" srcset="assets/ti-zoom-transition-hero-v2.png">
+    <img src="assets/ti-zoom-transition-hero-v2.png" alt="TiZoomTransition source view expanding into a full-screen view" width="640">
+  </picture>
 </p>
 
 `ti.zoomtransition` exposes Apple's native fluid zoom transition to Titanium on iOS 18 and later. It supports both modal presentation and `Ti.UI.NavigationWindow` pushes.
