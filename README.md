@@ -2,9 +2,9 @@
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/ti-zoom-transition-hero-dark.png">
-    <source media="(prefers-color-scheme: light)" srcset="assets/ti-zoom-transition-hero-v2.png">
-    <img src="assets/ti-zoom-transition-hero-v2.png" alt="TiZoomTransition source view expanding into a full-screen view" width="640">
+    <source media="(prefers-color-scheme: dark)" srcset="assets/ti-zoom-transition-hero-dark-transparent.png">
+    <source media="(prefers-color-scheme: light)" srcset="assets/ti-zoom-transition-hero-light-transparent.png">
+    <img src="assets/ti-zoom-transition-hero-light-transparent.png" alt="TiZoomTransition source view expanding into a full-screen view" width="640">
   </picture>
 </p>
 
