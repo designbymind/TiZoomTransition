@@ -1,0 +1,14 @@
+"#rootWindow": {
+	extendSafeArea: true,
+	extendEdges: [1, 4]
+}
+
+"#rootTableView": {
+	separatorStyle: Ti.UI.TABLE_VIEW_SEPARATOR_STYLE_NONE,
+	showVerticalScrollIndicator: false,
+	minRowHeight: 204,
+	tableSeparatorInsets: { left: 0, right: 0 },
+	scrollable: true,
+	enableBounce: true,
+	sectionHeaderTopPadding: 0
+}

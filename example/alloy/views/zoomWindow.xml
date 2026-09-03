@@ -1,0 +1,17 @@
+<Alloy>
+	<NavigationWindow
+		id="detailNavigationWindow"
+		platform="ios"
+		onClose="onDetailWindowClose">
+		<Window id="detailWindow" title="Zoom Window">
+			<LeftNavButton id="closeButton" title="Done" onClick="closeDetail" />
+			<TableView id="detailTableView" onClick="openSubWindow">
+				<HeaderView>
+					<View id="detailHeaderView">
+						<ImageView id="detailHeaderImage" />
+					</View>
+				</HeaderView>
+			</TableView>
+		</Window>
+	</NavigationWindow>
+</Alloy>

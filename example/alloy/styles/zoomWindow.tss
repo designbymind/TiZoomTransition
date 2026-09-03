@@ -1,0 +1,27 @@
+"#detailWindow": {
+	extendSafeArea: true,
+	extendEdges: [1, 4]
+}
+
+"#detailTableView": {
+	separatorStyle: Ti.UI.TABLE_VIEW_SEPARATOR_STYLE_NONE,
+	showVerticalScrollIndicator: false,
+	minRowHeight: 88,
+	tableSeparatorInsets: { left: 0, right: 0 },
+	scrollable: true,
+	enableBounce: true,
+	sectionHeaderTopPadding: 0
+}
+
+"#detailHeaderView": {
+	width: Ti.UI.FILL,
+	height: 204
+}
+
+"#detailHeaderImage": {
+	width: 342,
+	height: 192,
+	top: 12,
+	cache: false,
+	borderRadius: 22
+}

@@ -1,0 +1,8 @@
+<Alloy>
+	<NavigationWindow id="rootNavigationWindow" platform="ios">
+		<Window id="rootWindow" title="Ti.ZoomTransition">
+			<RightNavButton id="rootRightNavButton" />
+			<TableView id="rootTableView" onClick="openZoomWindow" />
+		</Window>
+	</NavigationWindow>
+</Alloy>

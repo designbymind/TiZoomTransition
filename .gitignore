@@ -1,0 +1,13 @@
+.DS_Store
+
+ios/build/
+ios/dist/
+ios/metadata.json
+
+*.pbxuser
+*.perspective
+*.perspectivev3
+*.xcworkspace/
+xcuserdata/
+*.xcuserstate
+*.xcuserdata*

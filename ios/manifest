@@ -1,0 +1,19 @@
+#
+# this is your module manifest and used by Titanium
+# during compilation, packaging, distribution, etc.
+#
+version: 1.0.0
+apiversion: 2
+architectures: arm64 x86_64
+description: Native fluid zoom transitions for Titanium windows on iOS 18 and later
+author: DesignByMind LLC
+license: MIT
+copyright: Copyright (c) 2026 DesignByMind LLC
+
+# these should not be edited
+name: TiZoomTransition
+moduleid: ti.zoomtransition
+guid: 7d3d3eb6-eb49-4754-b795-5dd6049f1006
+platform: iphone
+mac: false
+minsdk: 13.3.0.GA
