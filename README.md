@@ -115,10 +115,11 @@ Prepares a destination `Ti.UI.Window` before it is opened or pushed.
 Options:
 
 - `sourceView` (required): The visible Titanium view from which the destination zooms and to which it returns.
+- `alignmentView` (optional): A visible view inside the destination that the source view should align with during the zoom. This is useful when a card or thumbnail should morph into a matching image region instead of the entire window. Its first valid alignment rectangle is cached so table/list bounce cannot move the zoom target during an interactive dismissal.
 - `scrollView` (optional): A Titanium scroll, table, or list view inside the destination.
 - `interactiveDismiss` (optional, default `true`): Set to `false` to disable interactive zoom dismissal while retaining animated programmatic close/pop.
 - `onlyWhenScrollAtTop` (optional, default `true`): When a `scrollView` is supplied, gate downward dismissal at its adjusted top edge.
-- `scrollTopTolerance` (optional, default `1`): Nonnegative point tolerance for the top-edge test.
+- `scrollTopTolerance` (optional, default `1`): Nonnegative point tolerance for the top-edge test. Values around `8` can make the handoff more forgiving for elastic or fractionally positioned table/list content.
 - `fullScreen` (optional, default `false`): Set the destination controller's modal presentation style to full screen.
 
 Call this method after creating and populating the destination views, but before opening the window.
@@ -126,6 +127,14 @@ Call this method after creating and populating the destination views, but before
 ### `setSourceView(window, sourceView)`
 
 Changes the return target for a prepared window. Use this before dismissal when the detail screen can move between items and needs to zoom back to a different visible source.
+
+### `setAlignmentView(window, alignmentView)`
+
+Changes the destination alignment target for a prepared window and replaces its cached alignment rectangle. Call this after the new view is attached when paging between distinct photo view proxies.
+
+### `refreshAlignmentRect(window)`
+
+Invalidates and recaptures the prepared window's alignment rectangle. Use this after a rotation or another completed layout change that materially moves or resizes the alignment view. Do not call it continuously while scrolling or during an interactive dismissal.
 
 ### `clearWindow(window)`
 
@@ -136,6 +145,8 @@ Removes the prepared transition. This is optional when the destination window is
 - A real source view is required for a genuine zoom transition. It needs to remain alive and attached to the presenting interface when UIKit asks for it during dismissal.
 - UIKit may call the source provider more than once and transitions may be interrupted at any time. Keep `open`, `focus`, `blur`, and `close` handling idempotent.
 - A pull that begins while the supplied scroll view is away from its top remains a scroll. Once it is at the top, a new downward drag can begin dismissal.
+- The module does not change the supplied scroll view's bounce configuration. Properties such as `disableBounce` remain under application control.
+- The alignment rectangle is stable for the lifetime of the current target. Use `setAlignmentView` when that target proxy changes, or `refreshAlignmentRect` after a completed layout change.
 - If the same top-edge pull is reserved for refresh, omit `scrollView` or set `onlyWhenScrollAtTop: false` and let UIKit use its default interaction policy.
 - The module does not expose transition progress because Apple's public zoom API owns the interaction internally.
 
